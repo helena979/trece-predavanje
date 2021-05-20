@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Zanr extends Model
+class Jezik extends Model
 {
     use HasFactory;
-    protected $fillable=['Naziv'];
 }

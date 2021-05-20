@@ -15,6 +15,9 @@ class CreateZanrsTable extends Migration
     {
         Schema::create('zanrs', function (Blueprint $table) {
             $table->id();
+            $table->string('Naziv');
+            $table->string('Ikonica')->nullabe();
+            $table->string('Opis',2048)->nullable();
             $table->timestamps();
         });
     }

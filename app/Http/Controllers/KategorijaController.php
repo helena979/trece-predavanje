@@ -26,7 +26,7 @@ class KategorijaController extends Controller
      */
     public function create()
     {
-        return view('kategorije.create');
+        return view('kategorija.create');
     }
 
     /**
@@ -36,20 +36,16 @@ class KategorijaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         $request->validate([
-        'nazivKategorija'=>'required',
-        'opisKategorija'=>'required'
+            'nazivKategorije'=>'required',
+            'opisKategorije'=>'required'
         ]);
-        $kategorija = new Kategorija();
+        $kategorija = new Kategorija(); // TODO: DODATI CUVANJE SLIKE
         $kategorija->Naziv = $request->nazivKategorije;
         $kategorija->Opis = $request->opisKategorije;
         $kategorija = $kategorija->save();
-        if($kategorija){
-            return redirect()->route('kategorije.index')->with('success','Kategorija je uspjesno dodata');
-        }else{
-            return redirect()->route('kategorije.index')->with('fail','Kategorija nije uspjesno dodata');
-        }
+        return redirect()->route('kategorija.index')->with('success','Kategorija je uspjesno dodata');
     }
 
     /**

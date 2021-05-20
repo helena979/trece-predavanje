@@ -14,8 +14,8 @@ class ZanrController extends Controller
      */
     public function index()
     {
-        $zanrovi=Zanr::all();
-        return view('zanrovi.index',['zanrovi'=>$zanrovi]);
+        $zanrovi = Zanr::paginate(10);
+        return view('zanr.index',['zanrovi'=>$zanrovi]);
     }
 
     /**
@@ -25,7 +25,7 @@ class ZanrController extends Controller
      */
     public function create()
     {
-        return view('zanrovi.create');
+        return view('zanr.create');
     }
 
     /**
@@ -37,15 +37,15 @@ class ZanrController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nazivZanr'=>'required'
+            'nazivZanra'=>'required'
         ]);
         $zanr=new Zanr();
         $zanr->Naziv=$request->nazivZanr;
         $zanr=$zanr->save();
         if($zanr){
-          return redirect()->route('zanrovi.index')->with('success','Zanr je uspješno dodat');
+          return redirect()->route('zanr.index')->with('success','Zanr je uspješno dodat');
         }else{
-          return redirect()->route('zanrovi.index')->with('fail','Zanr nije uspješno dodat'); 
+          return redirect()->route('zanr.index')->with('fail','Zanr nije uspješno dodat'); 
         }
     }
 
@@ -58,18 +58,20 @@ class ZanrController extends Controller
     public function show(Zanr $zanr)
     {
         $zanr=Zanr::find($zanr->Id);
-        return view('zanrovi.show',["zanr"=>$zanr]);
+        return view('zanr.show',['zanr'=>$zanr]);
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
+     * 
+     * @param \Illuminate\Http\Request $request
      * @param  \App\Models\Zanr  $zanr
      * @return \Illuminate\Http\Response
      */
     public function edit(Zanr $zanr)
     {
-        //
+        $zanr=Zanr::where('id',$zanr->id)->first();
+        return view('zanr.edit',['zanr'=>$zanr]);
     }
 
     /**
@@ -82,15 +84,15 @@ class ZanrController extends Controller
     public function update(Request $request, Zanr $zanr)
     {
         $request->validate([
-            'nazivZanrEdit'=>'required'
+            'nazivZanraEdit'=>'required'
            ]);
-           $azurirano=Zanr::where('Id',$zanr->Id)->update([
+           $azurirano=Zanr::where('id',$zanr->Id)->update([
                'Naziv'=>$request->nazivZanrEdit
            ]);
            if($azurirano){
-               return redirect()->route('zanrovi.index')->with('success','Zanr je uspješno azuriran');
+               return redirect()->route('zanr.index')->with('success','Zanr je uspješno azuriran');
              }else{
-               return redirect()->route('zanrovi.index')->with('fail','Zanr nije uspješno azuriran'); 
+               return redirect()->route('zanr.index')->with('fail','Zanr nije uspješno azuriran'); 
              }
     }
 
@@ -102,12 +104,12 @@ class ZanrController extends Controller
      */
     public function destroy(Zanr $zanr)
     {
-        $izdanje=Zanr::where('Id',$zanr->Id);
+        $izdanje=Zanr::where('id',$zanr->Id);
         $obrisi=$izdanje->delete();
         if($obrisi){
-            return redirect()->route('zanrovi.index')->with('success','Zanr je uspješno obrisan');
+            return redirect()->route('zanr.index')->with('success','Zanr je uspješno obrisan');
           }else{
-            return redirect()->route('zanrovi.index')->with('fail','Zanr nije uspješno obrisan'); 
+            return redirect()->route('zanr.index')->with('fail','Zanr nije uspješno obrisan'); 
           }
     }
 }

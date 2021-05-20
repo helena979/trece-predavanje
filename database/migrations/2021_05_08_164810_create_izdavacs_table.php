@@ -14,7 +14,7 @@ class CreateIzdavacsTable extends Migration
     public function up()
     {
         Schema::create('izdavacs', function (Blueprint $table) {
-            $table->id('Id');
+            $table->id();
             $table->string('Naziv');
             $table->timestamps();
         });

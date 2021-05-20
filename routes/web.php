@@ -53,6 +53,19 @@ Route::get('/addFromat',[FormatController::class,'addFormat'])->name('format.cre
 Route::post('/addFormat',[FormatController::class,'saveFormat'])->name('format.save');
 Route::get("/format/delete/{id}",[FormatController::class,'destroy'])->name('format.delete');
 
+//Route::get('/zanrovi',[ZanrController::class,'index'])->name('zanrovi.index');
+//Route::get("/zanrovi/{id}",[ZanrController::class,'show'])->name('zanrovi.edit');
+//Route::post("/zanrovi-update",[ZanrController::class,'update'])->name('zanrovi.update');
+//Route::get("/zanrovi/delete/{id}",[ZanrController::class,'destroy'])->name('zanrovi.delete');
+//Route::get("/addZanrovi",[ZanrController::class,'addZanr'])->name('zanrovi.add');
+//Route::post("/saveZanrovi",[ZanrController::class,'saveZanr'])->name('zanrovi.save');
+
+// Route::get('/kategorija',[KategorijaController::class,'index'])->name('Kategorija.index');
+// Route::get("/kategorija/{id}",[KategorijaController::class,'show'])->name('Kategorija.edit');
+// Route::post("/kategorija-update",[KategorijaController::class,'update'])->name('Kategorija.update');
+// Route::get("/kategorija/delete/{id}",[KategorijaController::class,'destroy'])->name('Kategorija.delete');
+// Route::get("/addKategorija",[KategorijaController::class,'addKategorija'])->name('Kategorija.add');
+// Route::post("/saveZKategorija",[KategorijaController::class,'saveKategorija'])->name('Kategorija.save');
 // route za izdavac
 /*
 Route::get('/izdavac',[IzdavacController::class,'index'])->name('izdavac.index');

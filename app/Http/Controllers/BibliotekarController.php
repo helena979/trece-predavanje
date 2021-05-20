@@ -16,7 +16,7 @@ class BibliotekarController extends Controller
      */
     public function index()
     {   
-        $idb=Tipkorisnika::where('Naziv','Bibliotekar')->first()->Id;
+        $idb=Tipkorisnika::where('Naziv','Bibliotekar')->first()->id;
         $bib=Korisnik::where('tipkorisnika_id',$idb)->get();
         return view('bibliotekar.index',['bib'=>$bib]);
     }

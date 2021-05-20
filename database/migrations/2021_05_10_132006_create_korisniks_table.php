@@ -14,15 +14,14 @@ class CreateKorisniksTable extends Migration
     public function up()
     {
         Schema::create('korisniks', function (Blueprint $table) {
-            $table->id('Id');
-            $table->unsignedBigInteger('tipkorisnika_id');
+            $table->id();
             $table->string('ImePrezime');
             $table->string('Email')->unique();
             $table->string('JMBG')->nullable();
             $table->string('KorisnickoIme')->nullable();
             $table->string('Sifra')->nullable();
             $table->string('Foto')->nullable();
-            $table->index('tipkorisnika_id');
+            $table->foreignId('tipkorisnika_id')->constrained('tipkorisnikas');                
             $table->timestamps();
         });
     }

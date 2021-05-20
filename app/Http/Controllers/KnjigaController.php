@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ucenik;
+use App\Models\Knjiga;
 use Illuminate\Http\Request;
-use App\Models\Tipkorisnika;
-use App\Models\Korisnik;
-class UcenikController extends Controller
+
+class KnjigaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class UcenikController extends Controller
      */
     public function index()
     {
-        $tipid=Tipkorisnika::where('Naziv','Učenik')->first()->id;
-        $ucenici=Korisnik::where('tipkorisnika_id',$tipid)->get();
-        return view('ucenik.index',['ucenici'=>$ucenici]);
+        //
     }
 
     /**
@@ -44,10 +41,10 @@ class UcenikController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Ucenik  $ucenik
+     * @param  \App\Models\Knjiga  $knjiga
      * @return \Illuminate\Http\Response
      */
-    public function show(Ucenik $ucenik)
+    public function show(Knjiga $knjiga)
     {
         //
     }
@@ -55,10 +52,10 @@ class UcenikController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Ucenik  $ucenik
+     * @param  \App\Models\Knjiga  $knjiga
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ucenik $ucenik)
+    public function edit(Knjiga $knjiga)
     {
         //
     }
@@ -67,10 +64,10 @@ class UcenikController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Ucenik  $ucenik
+     * @param  \App\Models\Knjiga  $knjiga
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ucenik $ucenik)
+    public function update(Request $request, Knjiga $knjiga)
     {
         //
     }
@@ -78,10 +75,10 @@ class UcenikController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Ucenik  $ucenik
+     * @param  \App\Models\Knjiga  $knjiga
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ucenik $ucenik)
+    public function destroy(Knjiga $knjiga)
     {
         //
     }

@@ -43,7 +43,7 @@
             </div>
             <!-- Space for content -->
             <div class="scroll height-content section-content">
-                <form class="text-gray-700 forma">
+                <form method="post" action="{{route('kategorija.store')}}" class="text-gray-700 forma">
                 @csrf 
                 @method('POST')
                     <div class="flex flex-row ml-[30px]">
@@ -74,8 +74,7 @@
                                         </label>
                                     </div>
                                     <div id="icon-output" class="h-[40px] px-[20px] pt-[7px]"></div>
-                                </div>
-                            </div>
+                                </div>                           </div>
 
                             <div class="mt-[20px]">
                                 <p class="inline-block">Opis</p>
@@ -95,7 +94,7 @@
                                 </button>
                                 <button id="sacuvajKategoriju" type="submit"
                                     class="btn-animation shadow-lg w-[150px] disabled:opacity-50 focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px] hover:bg-[#46A149] bg-[#4CAF50]"
-                                    onclick="validacijaKategorija()">
+                                    >
                                     Sacuvaj <i class="fas fa-check ml-[4px]"></i>
                                 </button>
                             </div>

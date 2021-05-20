@@ -13,25 +13,25 @@
                 </div>
             </div>
             <div class="py-4 text-gray-500 border-b-[1px] border-[#e4dfdf] pl-[30px]">
-                <a href="settingsPolisa.php" class="inline hover:text-blue-800">
+            <a href="{{route('settings')}}" class="inline hover:text-blue-800 active-book-nav">
                     Polisa
                 </a>
-                <a href="{{route('kategorija.index')}}" class="inline ml-[70px] hover:text-blue-800 active-book-nav">
+                <a href="{{route('kategorija.index')}}" class="inline ml-[70px] hover:text-blue-800">
                     Kategorije
                 </a>
-                <a href="settingsZanrovi.php" class="inline ml-[70px] hover:text-blue-800">
+                <a href="{{route('zanr.index')}}" class="inline ml-[70px] hover:text-blue-800">
                     Zanrovi
                 </a>
-                <a href="settingsIzdavac.php" class="inline ml-[70px] hover:text-blue-800">
+                <a href="{{route('izdavac.index')}}" class="inline ml-[70px] hover:text-blue-800">
                     Izdavac
                 </a>
-                <a href="settingsPovez.php" class="inline ml-[70px] hover:text-blue-800">
+                <a href="{{route('povez.index')}}" class="inline ml-[70px] hover:text-blue-800">
                     Povez
                 </a>
-                <a href="settingsFormat.php" class="inline ml-[70px] hover:text-blue-800">
+                <a href="{{route('format.index')}}" class="inline ml-[70px] hover:text-blue-800">
                     Format
                 </a>
-                <a href="settingsPismo.php" class="inline ml-[70px] hover:text-blue-800">
+                <a href="{{route('pismo.index')}}" class="inline ml-[70px] hover:text-blue-800">
                     Pismo
                 </a>
             </div>
@@ -47,7 +47,7 @@
                     </div>
             @endif
                 <div class="flex items-center px-[50px] py-8 space-x-3 rounded-lg">
-                    <a href="novaKategorija.php"
+                    <a href="{{route('kategorija.create')}}"
                         class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                         <i class="fas fa-plus mr-[15px]"></i> Nova kategorija
                     </a>

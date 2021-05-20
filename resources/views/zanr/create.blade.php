@@ -23,7 +23,7 @@
                                         <span class="mx-2">/</span>
                                     </li>
                                     <li>
-                                        <a href="settingsZanrovi.php" class="text-[#2196f3] hover:text-blue-600">
+                                        <a href="zanr.index" class="text-[#2196f3] hover:text-blue-600">
                                             Zanrovi
                                         </a>
                                     </li>
@@ -31,7 +31,7 @@
                                         <span class="mx-2">/</span>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-gray-400 hover:text-blue-600">
+                                        <a href="{{route(zanr.edit)}}" class="text-gray-400 hover:text-blue-600">
                                             Novi zanr
                                         </a>
                                     </li>
@@ -44,13 +44,16 @@
             
             <!-- Space for content -->
             <div class="scroll height-content section-content">
-                <form class="text-gray-700 forma">
+                <form action="{{route('zanr.store')}}" method="post" class="text-gray-700 forma">
+                    @csrf
+                    @method('POST')
                     <div class="flex flex-row ml-[30px]">
                         <div class="w-[50%] mb-[150px]">
                             <div class="mt-[20px]">
                                 <p>Naziv zanra <span class="text-red-500">*</span></p>
-                                <input type="text" name="nazivZanra" id="nazivZanra" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]" onkeydown="clearErrorsNazivZanra()"/>
-                                <div id="validateNazivZanra"></div>
+                                <input type="text" name="nazivZanra" id="nazivZanra" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]" />
+                                <div class="fail" id="validateNazivZanra"></div>
+                            @error
                             </div>
                         </div>
                     </div>
@@ -62,7 +65,7 @@
                                     Ponisti <i class="fas fa-times ml-[4px]"></i>
                                 </button>
                                 <button id="sacuvajZanr" type="submit"
-                                    class="btn-animation shadow-lg w-[150px] disabled:opacity-50 focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px] hover:bg-[#46A149] bg-[#4CAF50]" onclick="validacijaZanr()">
+                                    class="btn-animation shadow-lg w-[150px] disabled:opacity-50 focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px] hover:bg-[#46A149] bg-[#4CAF50]" >
                                     Sacuvaj <i class="fas fa-check ml-[4px]"></i>
                                 </button>
                             </div>
@@ -71,5 +74,5 @@
                 </form>
             </div>
         </section>
-        <!-- End Content -->
+        <!-- End Content onclick="validacijaZanr() onkeydown="clearErrorsNazivZanra()"-->
         @endsection

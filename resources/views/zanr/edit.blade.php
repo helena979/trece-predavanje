@@ -23,7 +23,7 @@
                                         <span class="mx-2">/</span>
                                     </li>
                                     <li>
-                                        <a href="settingsZanrovi.php" class="text-[#2196f3] hover:text-blue-600">
+                                        <a href="settingsZanr.php" class="text-[#2196f3] hover:text-blue-600">
                                             Zanrovi
                                         </a>
                                     </li>
